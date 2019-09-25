@@ -41,6 +41,8 @@ class TicTacToe {
 
 
     noMoreTurns() {
+        console.log(this._field)
+        console.log(this.getResults())
         return this.getResults().filter(el => el.indexOf(null) > -1).length === 0  
     }
 
@@ -56,4 +58,14 @@ class TicTacToe {
     }
 }
 
-module.exports = TicTacToe;
+const game = new TicTacToe;
+
+game.nextTurn(2, 1);
+game.nextTurn(0, 2);
+game.nextTurn(1, 0);
+game.nextTurn(2, 2);
+game.nextTurn(0, 1);
+game.nextTurn(1, 2);
+
+console.log(game._field)
+console.log(game.noMoreTurns())
